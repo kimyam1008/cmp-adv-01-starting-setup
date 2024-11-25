@@ -1,6 +1,9 @@
 <template>
     <div>
-       <slot></slot>
+        <header>
+            <slot name="header"></slot>
+        </header>
+       <slot></slot> <!-- 이름없는 슬롯은 하나만 -->
     </div>
 </template>
 
