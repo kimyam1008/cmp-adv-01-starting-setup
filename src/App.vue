@@ -6,24 +6,25 @@
     <button @click="setSelectComponent('manage-goals')">Manage Goals</button>
     <!-- <active-goals v-if="selectComponent === 'active-goals'"></active-goals>
     <manage-goals v-if="selectComponent === 'manage-goals'"></manage-goals> -->
-    <component :is="selectComponent"></component>
+    <keep-alive>
+      <component :is="selectComponent"></component>
+    </keep-alive>
   </div>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue';
+import TheHeader from './components/layout/TheHeader.vue';
 // import BadgeList from './components/BadgeList.vue';
 // import UserInfo from './components/UserInfo.vue';
 // import CourseGoals from './components/CourseGoals.vue';
 import ActiveGoals from './components/ActiveGoals.vue';
-import ManageGoals from './components/ManageGoals.vue'
+import ManageGoals from './components/ManageGoals.vue';
 
 export default {
   components: {
     TheHeader,
     ActiveGoals,
-    ManageGoals
-
+    ManageGoals,
   },
   data() {
     return {
